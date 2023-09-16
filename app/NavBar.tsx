@@ -16,6 +16,9 @@ const NavBar = () => {
             <Link className="mr-5" href="/admin">
                 Admin
             </Link>
+            <Link className="mr-5" href="/upload">
+                Upload
+            </Link>
         </nav>
     );
 };
