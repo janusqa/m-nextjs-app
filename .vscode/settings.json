@@ -1,0 +1,8 @@
+{
+    "editor.formatOnSave": true,
+    "editor.rulers": [80],
+    "eslint.rules.customizations": [{ "rule": "*", "severity": "warn" }],
+    "editor.fontFamily": "'JetBrains Mono', 'Droid Sans Mono', monospace",
+    "terminal.integrated.fontFamily": "'JetBrains Mono'",
+    "terminal.integrated.gpuAcceleration": "off"
+}
