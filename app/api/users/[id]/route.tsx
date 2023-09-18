@@ -11,7 +11,7 @@ export async function GET(request: NextRequest, { params: { id } }: Props) {
     // fetch data
     // if data not found return 404
     // else return data
-    const user = await prisma.user.findUnique({ where: { id: parseInt(id) } });
+    const user = await prisma.user.findUnique({ where: { id: id } });
 
     if (!!!user)
         return NextResponse.json({ error: 'User not found' }, { status: 404 });
@@ -31,7 +31,7 @@ export async function PUT(request: NextRequest, { params: { id } }: Props) {
     // otherwise fetch user with given id
     // if no user return 404
     const existUser = await prisma.user.findUnique({
-        where: { id: parseInt(id) },
+        where: { id: id },
     });
 
     // check for user existance
@@ -40,7 +40,7 @@ export async function PUT(request: NextRequest, { params: { id } }: Props) {
         return NextResponse.json({ error: 'User not found' }, { status: 404 });
 
     const updatedUser = await prisma.user.update({
-        where: { id: parseInt(id) },
+        where: { id: id },
         data: user.data,
     });
 
@@ -52,13 +52,13 @@ export async function DELETE(request: NextRequest, { params: { id } }: Props) {
     // fetch user with given id
     // if no user return 404
     const existUser = await prisma.user.findUnique({
-        where: { id: parseInt(id) },
+        where: { id: id },
     });
     if (!!!existUser)
         return NextResponse.json({ error: 'User not found' }, { status: 404 });
 
     const deletedUser = await prisma.user.delete({
-        where: { id: parseInt(id) },
+        where: { id: id },
     });
 
     // else update and return user
